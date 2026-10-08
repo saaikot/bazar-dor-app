@@ -2,7 +2,6 @@ import { Product, Category } from '@/types';
 
 const BASE_URL_1 = 'https://api.api-store.workers.dev/api/bazardor';
 const BASE_URL_2 = 'https://api.abcz.workers.dev/api/bazardor';
-
 async function fetchWithFallback<T>(endpoint: string): Promise<T> {
   const urls = [`${BASE_URL_1}${endpoint}`, `${BASE_URL_2}${endpoint}`];
 

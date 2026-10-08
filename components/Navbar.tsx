@@ -43,12 +43,17 @@ export default function Navbar() {
   return (
     <header className="bg-base-100 border-b border-base-300 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-        <Link href="/" className="flex flex-col">
-          <span className="text-xl font-bold flex items-center gap-1">
-            🛒 বাজার দর
-          </span>
-          <span className="text-xs text-base-content/60">{banglaDate}</span>
-        </Link>
+        <Link href="/" className="flex items-center gap-2">
+  <img
+    src="/logo.png"
+    alt="বাজার দর"
+    className="w-10 h-10 object-contain"
+  />
+  <div className="flex flex-col">
+    <span className="text-xl font-bold">বাজার দর</span>
+    <span className="text-xs text-base-content/60">{banglaDate}</span>
+  </div>
+</Link>
 
         <div className="flex items-center gap-2">
           {isPending ? (
