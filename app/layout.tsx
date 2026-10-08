@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import PriceTicker from '@/components/PriceTicker';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Suspense } from 'react';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 
@@ -31,7 +32,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-base-100 text-base-content">
-        <Navbar />
+        <Suspense fallback={<div className="h-16 border-b border-base-300" />}>
+          <Navbar />
+        </Suspense>
         <PriceTicker />
         <main className="flex-1">{children}</main>
         <Toaster position="top-right" />
