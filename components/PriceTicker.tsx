@@ -26,17 +26,17 @@ export default function PriceTicker() {
   const items = useMemo(() => [...sampleItems, ...sampleItems], []);
 
   return (
-    <div className="bg-secondary text-secondary-content overflow-hidden py-2">
+    <div className="bg-emerald-600 text-white overflow-hidden py-2">
       <div className="flex animate-marquee whitespace-nowrap gap-8">
         {items.map((item, i) => {
           const arrow =
             item.changePercent > 0 ? '▲' : item.changePercent < 0 ? '▼' : '—';
           const color =
-            item.changePercent > 0
-              ? 'text-success'
-              : item.changePercent < 0
-              ? 'text-error'
-              : 'text-base-content/60';
+  item.changePercent > 0
+    ? 'text-emerald-200'
+    : item.changePercent < 0
+    ? 'text-rose-200'
+    : 'text-white/70';
 
           return (
             <span key={i} className="flex items-center gap-2 text-sm">
